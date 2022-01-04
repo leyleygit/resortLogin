@@ -14,10 +14,11 @@ class HomePage extends StatefulWidget {
 
 int number = 0;
 BehaviorSubject<int> subjectNumber = BehaviorSubject<int>();
-sumNumber(){
+sumNumber() {
   number++;
   subjectNumber.add(number);
 }
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,8 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         elevation: 5.0,
         onPressed: () {
-         Navigator.push(context, CupertinoPageRoute(builder: (_)=>SecondPage()));
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (_) => SecondPage()));
         },
         child: Text('Second'),
       ),
@@ -34,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
+          const Text(
             'Welcome HomePage',
             style: TextStyle(fontSize: 50),
           ),
